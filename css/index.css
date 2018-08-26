@@ -1,0 +1,240 @@
+html {
+    box-sizing: border-box;
+    background-color: rgb(221, 215, 215);
+}
+
+body {
+    margin: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ----------------header start----------------*/
+header {
+    background-image: url('https://d17ixjpazu3j94.cloudfront.net/images/2017/06/20/149792357170519b5mVHItxO.jpg');
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+#navbar > ul {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+#navbar > ul > li {
+    padding: 30px 20px;
+    color: rgb(218, 214, 214);
+    position: relative;
+    overflow: hidden;
+}
+
+#navbar > ul > li:not(:last-child) {
+    border-right: 2px solid gray;
+}
+
+#navbar > ul > li:hover {
+    background-color: rgba(0, 0, 0, .9);
+    cursor: pointer;
+    overflow: visible;
+}
+
+#navbar > ul > li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: red;
+    width: 100%;
+    transform: scaleX(0);
+}
+
+#navbar > ul > li:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform .5s;
+}
+
+ul.dropdown {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    transform: translateX(-20px);
+    padding: 20px;
+    background: rgba(0, 0, 0, .6);
+    text-align: center;
+}
+
+ul.dropdown > li {
+    margin-bottom: 10px;
+}
+
+ul.dropdown > li > a {
+    text-decoration: none;
+    color: gray;
+}
+
+ul.dropdown > li > a:hover {
+    color: red;
+}
+
+.title {
+    /* width: 1000px; */
+    margin: 150px auto;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+}
+
+.title a {
+    display: inline-block;
+    font-size: 30px;
+    padding: 20px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 5px solid white;
+    background: rgba(0, 0, 0, .2);
+    color: white;
+    text-decoration: none;
+    transition: transform .2s;
+}
+
+.title a:hover {
+    background: rgba(0, 0, 0, .8);
+    transform: scale(1.05);
+}
+
+.more {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    transform: translateY(-60px);
+}
+
+@keyframes upToDown {
+    from {
+        transform: translateY(-20px);
+    }
+    to {
+        transform: translateY(10px);
+    }
+}
+
+.arrowDown {
+    animation: upToDown .5s infinite alternate;
+}
+
+/* ----------------content start---------------- */
+
+.content {
+    position: relative;
+    height: 2000px;
+    /* padding: 50px 30px; */
+}
+
+.bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('https://cyberisland.teldap.tw/fck_upload/Image/nEO_IMG_%E9%AB%98%E9%9B%84%E5%B8%82%E4%B8%89%E6%B0%91%E5%8D%80(1).jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    opacity: .2;
+    /* z-index: -1; */
+}
+
+.blocks {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.block {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    margin: 0 30px;
+}
+
+.block img {
+    opacity: 0;
+    transition: all .5s;
+    border-radius: 5px;
+    height: 300px;
+}
+
+.block img.show {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.block .showLeft {
+    transform: translateX(-30%);
+}
+
+.block .showRight {
+    transform: translateX(30%);
+}
+
+.blocks > div:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.blocks > div:nth-child(even) > div {
+    margin-right: 50px;
+}
+
+.blocks > div:nth-child(odd) > img {
+    margin-right: 50px;
+}
+
+/* ----------------footer start---------------- */
+
+.footerPanel {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.footerPanel > div:not(:last-child) {
+    margin-right: 80px;
+}
+
+.footerPanel  a {
+    text-decoration: none;
+    color: #555;
+}
+
+.footerPanel  a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.footerPanel h4 {
+    margin-bottom: 10px;
+}
+
+.footerPanel li {
+    margin-bottom: 5px;
+}
