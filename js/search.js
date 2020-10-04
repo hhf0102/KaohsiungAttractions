@@ -1,4 +1,4 @@
-const parkAPI = 'https://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97';
+const parkAPI = 'https://raw.githubusercontent.com/hexschool/KCGTravel/master/datastore_search.json';
 const attractions = [];
 const list = document.querySelector('.content > ul');
 const searchBar = document.querySelector('.searchBar');
